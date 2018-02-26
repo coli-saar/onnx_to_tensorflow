@@ -51,3 +51,11 @@ else:
     model = onnx.load("lstm.onnx")
     tf_rep = prepare(model)
 
+    import tensorflow as tf
+    import numpy as np
+
+    x = np.zeros([5,1,3])
+    initial_h = np.zeros([1,1,3])
+    initial_c = np.zeros([1,1,3])
+
+    print(tf_rep.run({"0": x, "1": initial_h, "2": initial_c}))
