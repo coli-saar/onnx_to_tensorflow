@@ -28,6 +28,11 @@ for input_name in tf_rep.uninitialized:
     it = tf_rep.input_dict[input_name]
     print("  %s, shape %s, %s" % (input_name, it.shape, it.dtype))
 
+print("\nInput dictionary:")
+for input_name in tf_rep.input_dict:
+    it = tf_rep.input_dict[input_name]
+    print("  %s, shape %s, %s" % (input_name, it.shape, it.dtype))
+
 print("\nOutput tensors:")
 for output_name in tf_rep.predict_net.external_output:
     ot = tf_rep.predict_net.output_dict[output_name]

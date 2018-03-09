@@ -49,6 +49,7 @@ if generate_onnx:
 else:
     # read the model from lstm.onnx with onnx-tensorflow
     model = onnx.load("lstm.onnx")
+    print(model.graph)
     tf_rep = prepare(model)
 
     import tensorflow as tf
