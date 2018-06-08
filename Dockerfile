@@ -1,9 +1,9 @@
 FROM phusion/baseimage
 
 RUN apt-get update
-RUN apt-get install -y  git wget bzip2 python3 python3-pip unzip
+RUN apt-get install -y  git wget bzip2 python python3 python3-pip unzip
 
-RUN pip3 install protobuf numpy tensorflow pybind11 pyyaml mkl setuptools cmake cffi typing
+RUN pip3 install protobuf numpy tensorflow pybind11 pyyaml mkl-devel setuptools cmake cffi typing
 
 # compile Pytorch from source
 RUN git clone --recursive https://github.com/pytorch/pytorch
